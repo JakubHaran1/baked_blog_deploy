@@ -53,7 +53,7 @@ class PostModel(models.Model):
     slug = models.SlugField(primary_key=True)
     date = models.DateField(auto_now_add=True, verbose_name="Data:")
     excerpt = models.TextField(verbose_name="skrót", validators=[
-                               MinLengthValidator, MaxLengthValidator(250)])
+                               MinLengthValidator(8), MaxLengthValidator(250)])
 
     ingredients = models.TextField(
         validators=[MinLengthValidator(5)], verbose_name="Składniki:", null=True)
